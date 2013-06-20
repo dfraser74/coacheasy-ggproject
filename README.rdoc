@@ -1,6 +1,6 @@
 == Welcome to Coacheasy - GGA project
 
-Coacheasyuses Ruby on rails which is a web-application framework that includes everything needed to create
+Coacheasy uses Ruby on rails which is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
-Coacheasy makes it easy to Sport Coaches to keep communicat with atheletes about their training programs.
+Coacheasy makes it easy to Sport Coaches to keep communication with atheletes about their training programs.
