@@ -36,10 +36,25 @@ ActiveRecord::Schema.define(:version => 20130621115012) do
 
   create_table "programs", :force => true do |t|
     t.string   "title"
-    t.text     "body"
+    t.date     "cweekstart"
+    t.text     "cweekcomments"
+    t.text     "cday1"
+    t.text     "cday1zone"
+    t.text     "cday2"
+    t.text     "cday2zone"
+    t.text     "cday3"
+    t.text     "cday3zone"
+    t.text     "cday4"
+    t.text     "cday4zone"
+    t.text     "cday5"
+    t.text     "cday5zone"
+    t.text     "cday6"
+    t.text     "cday6zone"
+    t.text     "cday7"
+    t.text     "cday7zone"
     t.integer  "coach_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
