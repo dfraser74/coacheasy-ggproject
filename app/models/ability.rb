@@ -4,7 +4,7 @@ class Ability
   
 
   def initialize(coach)
-    can :manage, Program do |program|
+    can :manage, @program do |program|
       program.coach_id == coach.id
     end
     

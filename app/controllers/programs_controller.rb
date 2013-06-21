@@ -1,16 +1,14 @@
 class ProgramsController < ApplicationController
   
   before_filter :authenticate_coach!, :except => [:show]
+    
   
   # GET /programs
   # GET /programs.json
-  def coach_owns_program?
-  @program.coach == current_coach
-  end
-  
+   
   def index
-    @programs = Program.all
-
+    @programs = Program.find_all_by_coach_id(current_coach[:id])
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @programs }
@@ -32,7 +30,7 @@ class ProgramsController < ApplicationController
   # GET /programs/new.json
   def new
     @program = Program.new
-
+  
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @program }
@@ -48,7 +46,8 @@ class ProgramsController < ApplicationController
   # POST /programs.json
   def create
     @program = Program.new(params[:program])
-
+   
+    
     respond_to do |format|
       if @program.save
         format.html { redirect_to @program, notice: 'Program was successfully created.' }

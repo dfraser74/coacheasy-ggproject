@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130621115012) do
   create_table "programs", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "coach_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
