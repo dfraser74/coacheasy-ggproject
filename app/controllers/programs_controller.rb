@@ -4,6 +4,10 @@ class ProgramsController < ApplicationController
   
   # GET /programs
   # GET /programs.json
+  def coach_owns_program?
+  @program.coach == current_coach
+  end
+  
   def index
     @programs = Program.all
 
