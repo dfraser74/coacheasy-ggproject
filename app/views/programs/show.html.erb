@@ -7,9 +7,23 @@
 
 <p>
   <b>Body:</b><br />
-  <%= @program.body %>
+  <%= @program.cweekcomments %>
 </p>
 
 
 <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
+
+<br /><br /><br />
+<i>Comments</i>
+<div id="comments">
+	<%= render :partial => @program.comments %>
+</div>
+
+<% form_for [@program, Comment.new] do |f| %>
+	<p>
+		<% f.text_area :body %>
+		<br />
+		<%= f.submit "add Comment"%>
+	</p>
+<% end %>
