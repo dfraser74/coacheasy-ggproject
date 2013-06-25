@@ -20,8 +20,11 @@
   <p>
     <b>Comment:</b>
     <%= comment.body %>
-  </p>
+    <br />
+    <%= link_to 'Edit', edit_program_comment_path(@program, comment) %> | <%= link_to 'Destroy', [@program, comment] , method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>  
 <% end %>
+
 
 
 <%= form_for([@program, @program.comments.build]) do |f| %>
