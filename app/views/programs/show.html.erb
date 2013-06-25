@@ -16,14 +16,23 @@
 
 <br /><br /><br />
 <i>Comments</i>
-<div id="comments">
-	<%= render :partial => @program.comments %>
-</div>
-
-<% form_for [@program, Comment.new] do |f| %>
-	<p>
-		<% f.text_area :body %>
-		<br />
-		<%= f.submit "add Comment"%>
-	</p>
+<% @program.comments.each do |comment| %> 
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
 <% end %>
+
+
+<%= form_for([@program, @program.comments.build]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+

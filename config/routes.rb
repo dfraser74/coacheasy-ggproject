@@ -1,10 +1,10 @@
 Coacheasy::Application.routes.draw do
   devise_for :coaches
 
-  resources :programs, :dashboard
+  resources :programs
+  resources :dashboard
 
-
-  namespace :program do
+  resources :program do
     resources :comments
   end
 
