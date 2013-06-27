@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622074224) do
+ActiveRecord::Schema.define(:version => 20130627161058) do
 
   create_table "coaches", :force => true do |t|
     t.string   "email",                  :default => "",       :null => false
@@ -33,6 +33,48 @@ ActiveRecord::Schema.define(:version => 20130622074224) do
 
   add_index "coaches", ["email"], :name => "index_coaches_on_email", :unique => true
   add_index "coaches", ["reset_password_token"], :name => "index_coaches_on_reset_password_token", :unique => true
+
+  create_table "comment1s", :force => true do |t|
+    t.integer  "program_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comment2s", :force => true do |t|
+    t.integer  "program_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comment3s", :force => true do |t|
+    t.integer  "program_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comment4s", :force => true do |t|
+    t.integer  "program_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comment5s", :force => true do |t|
+    t.integer  "program_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comment6s", :force => true do |t|
+    t.integer  "program_id"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "program_id"

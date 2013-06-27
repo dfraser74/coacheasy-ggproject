@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Program:</b>
+  <%= @comment2.program_id %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @comment2.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment2_path(@comment2) %> |
+<%= link_to 'Back', comment2s_path %>

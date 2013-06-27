@@ -1,48 +1,211 @@
 <p id="notice"><%= notice %></p>
+<%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"> eMail this program to your Athlete</a>
+
+<h2><%= @program.title %> | <%= @program.cweekstart %></h2>
+
 
 <p>
-  <b>Title:</b><br />
-  <%= @program.title %>
+  <b><i><%= @program.cweekcomments %></i></b>
 </p>
 
-<p>
-  <b>Body:</b><br />
-  <%= @program.cweekcomments %>
-</p>
+<br />
 
-
-<%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
-
-<br /><br /><br />
-<i>Comments</i>
-
-  <p>
+<!-- ##### Coach Program Section 1 - START ##### -->
+<%= @program.cday1 %>
+<br>
+<%= @program.cday1zone %>
+<!-- ##### Coach Program Section 1 - END ##### -->
+<!-- ##### Athlete Comment Section 1 - START ##### -->
 <% if @program.comment %>
     <b>Comment:</b>
     <%= @program.comment.body %>
     <br />
     <%= link_to 'Edit', edit_program_comment_path(@program.comment) %>
     </p>  
-
-
-
-   
-  <% else %>
-  
-  <%= form_for([@program, @program.build_comment]) do |f| %>
+<% else %>
+  	<%= form_for([@program, @program.build_comment]) do |f| %>
     <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 1 Data"%>
+ 	 </div>
 <% end %>
-  
-  <% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 1 - END ##### -->
 
 
 
 
+<!-- ##### Coach Program Section 2 - START ##### -->
+<%= @program.cday2 %>
+<br>
+<%= @program.cday2zone %>
+<!-- ##### Coach Program Section 2 - END ##### -->
+<!-- ##### Athlete Comment Section 2 - START ##### -->
+<% if @program.comment1 %>
+    <b>Comment:</b>
+    <%= @program.comment1.body %>
+    <br />
+    <%= link_to 'Edit', edit_program_comment1_path(@program.comment1) %>
+    </p>  
+<% else %>
+  	<%= form_for([@program, @program.build_comment1]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 2 Data"%>
+ 	 </div>
+<% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 2 - END ##### -->
 
+
+
+
+<!-- ##### Coach Program Section 3 - START ##### -->
+<%= @program.cday3 %>
+<br>
+<%= @program.cday3zone %>
+<!-- ##### Coach Program Section 3 - END ##### -->
+<!-- ##### Athlete Comment Section 3 - START ##### -->
+<% if @program.comment2 %>
+    <b>Comment:</b>
+    <%= @program.comment2.body %>
+    <br />
+    <%= link_to 'Edit', edit_program_comment2_path(@program.comment2) %>
+    </p>  
+<% else %>
+  	<%= form_for([@program, @program.build_comment2]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 3 Data" %>
+ 	 </div>
+<% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 3 - END ##### -->
+
+
+
+
+<!-- ##### Coach Program Section 4 - START ##### -->
+<%= @program.cday4 %>
+<br>
+<%= @program.cday4zone %>
+<!-- ##### Coach Program Section 4 - END ##### -->
+<!-- ##### Athlete Comment Section 4 - START ##### -->
+<% if @program.comment3 %>
+    <b>Comment:</b>
+    <%= @program.comment3.body %>
+    <br />
+    <%= link_to 'Edit', edit_program_comment3_path(@program.comment3) %>
+    </p>  
+<% else %>
+  	<%= form_for([@program, @program.build_comment3]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 4 Data" %>
+ 	 </div>
+<% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 4 - END ##### -->
+
+
+
+
+<!-- ##### Coach Program Section 5 - START ##### -->
+<%= @program.cday5 %>
+<br>
+<%= @program.cday5zone %>
+<!-- ##### Coach Program Section 5 - END ##### -->
+<!-- ##### Athlete Comment Section 5 - START ##### -->
+<% if @program.comment4 %>
+    <b>Comment:</b>
+    <%= @program.comment4.body %>
+    <br />
+    <%= link_to 'Edit', edit_program_comment4_path(@program.comment4) %>
+    </p>  
+<% else %>
+  	<%= form_for([@program, @program.build_comment4]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 5 Data" %>
+ 	 </div>
+<% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 5 - END ##### -->
+
+
+
+
+<!-- ##### Coach Program Section 6 - START ##### -->
+<%= @program.cday6 %>
+<br>
+<%= @program.cday6zone %>
+<!-- ##### Coach Program Section 6 - END ##### -->
+<!-- ##### Athlete Comment Section 6 - START ##### -->
+<% if @program.comment5 %>
+    <b>Comment:</b>
+    <%= @program.comment5.body %>
+    <br />
+    <%= link_to 'Edit', edit_program_comment5_path(@program.comment5) %>
+    </p>  
+<% else %>
+  	<%= form_for([@program, @program.build_comment5]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 6 Data" %>
+ 	 </div>
+<% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 6 - END ##### -->
+
+
+
+
+<!-- ##### Coach Program Section 7 - START ##### -->
+<%= @program.cday7 %>
+<br>
+<%= @program.cday7zone %>
+<!-- ##### Coach Program Section 7 - END ##### -->
+<!-- ##### Athlete Comment Section 7 - START ##### -->
+<% if @program.comment6 %>
+    <b>Comment:</b>
+    <%= @program.comment6.body %>
+    <br />
+    <%= link_to 'Edit', edit_program_comment6_path(@program.comment6) %>
+    </p>  
+<% else %>
+  	<%= form_for([@program, @program.build_comment6]) do |f| %>
+    <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 7 Data" %>
+ 	 </div>
+<% end %>
+<% end %>
+<br /><br /><br />
+<!-- ##### Athlete Comment Section 7 - END ##### -->

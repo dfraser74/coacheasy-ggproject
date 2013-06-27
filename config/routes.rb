@@ -6,6 +6,12 @@ Coacheasy::Application.routes.draw do
 
   resources :program do
     resources :comments
+    resources :comment1s
+    resources :comment2s
+    resources :comment3s
+    resources :comment4s
+    resources :comment5s
+    resources :comment6s
   end
 
   # The priority is based upon order of creation:

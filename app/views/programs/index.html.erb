@@ -4,13 +4,13 @@
 	
 <% @programs.each do |program| %>
   <tr>
-    <td><h2><%= program.title %></h2></td>
+    <td><h2><%= program.title %> | <%= program.cweekstart %></h2></td>
   </tr>
   <tr>
     <td><%= program.cweekcomments %></td>
   </tr>
   <tr>
-    <td><%= link_to 'Show', program %> | <%= link_to 'Edit', edit_program_path(program) %> | <%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>| <%= link_to 'Show', program %> | <%= link_to 'Edit', edit_program_path(program) %> |
   </tr>
   
 <% end %>
