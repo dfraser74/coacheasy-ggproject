@@ -15,10 +15,58 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+  
+  
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :cweekcomments %>
   </div>
+  
+  
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= datepicker_input(:foo, :cweekstart, :minDate => -20, :maxDate => "+1M +10D", :tabindex => 70) %>
+    <%= f.datepicker :cweekstart, :minDate => 0, :maxDate => "+8Y" %>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :cweekcomments %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :cweekcomments %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :cweekcomments %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :cweekcomments %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :cweekcomments %>
+  </div>
+  
+  
+  
   <%= f.hidden_field :coach_id, :value => current_coach.id %>
   <div class="actions">
     <%= f.submit %>

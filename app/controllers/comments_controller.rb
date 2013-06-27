@@ -1,13 +1,18 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = @program.comments.build
+    @comment = @program.comment.build
   end 
   
   def create
     @program = Program.find(params[:program_id])
-    @comment = @program.comments.create(params[:comment])
-    redirect_to program_path(@program)
+    if @program.comment
+     flash[:error] = "Cannot comment more than once"
+    else
+     @comment = @program.create_comment(params[:comment])
+     flash[:notice] = "Comment created"
+    end
+   redirect_to program_path(@program)
   end
 
   def destroy
@@ -19,12 +24,12 @@ class CommentsController < ApplicationController
   
   def edit
     @program = Program.find(params[:program_id])
-    @comment = @program.comments.find(params[:id])
+    @comment = @program.comment(params[:id])
   end
   
    def update
     @program = Program.find(params[:program_id])
-    @comment = @program.comments.find(params[:id])
+    @comment = @program.comment
 
     respond_to do |format|
       #if @program.comments.update_attributes(params[:comment])
