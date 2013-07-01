@@ -1,10 +1,10 @@
-<h1>Listing programs</h1>
+<h2>Listing programs</h2>
 
 <table>
 	
 <% @programs.each do |program| %>
   <tr>
-    <td><h2><%= program.title %> | <%= program.cweekstart %></h2></td>
+    <td><h3><b><%= program.title %> | <%= program.cweekstart %></b></h3></td>
   </tr>
   <tr>
     <td><%= program.cweekcomments %></td>

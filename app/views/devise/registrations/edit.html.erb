@@ -15,7 +15,8 @@
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 <%= devise_error_messages! %>
-<div id="tabs">
+
+<div id="tabs" style=" font-size: 14px;">
   <ul>
     <li><a href="#tabs-1">Edit Account Information</a></li>
     <li><a href="#tabs-2">Password Settings</a></li>
@@ -24,7 +25,7 @@
 <br /><br />
 
 
-  <div id="tabs-1" bgcolor="#D8D8D8">
+  <div id="tabs-1" style=" font-size: 14px;">
     	<p>
     		<div><%= f.label :email %><br />
   			<%= f.email_field :email, :autofocus => true %></div>
@@ -41,7 +42,7 @@
        	</p>		
     </div>
     
-  <div id="tabs-2">
+  <div id="tabs-2" style=" font-size: 14px;">
   	<p>
     	
     		<div><%= f.label :New_password %> <i>(leave blank if you don't want to change it)</i><br />
@@ -52,7 +53,7 @@
     	
     </p>
     </div>
-  <div id="tabs-3">
+  <div id="tabs-3" style=" font-size: 14px;">
   	<p>
     	
     	#    
@@ -60,7 +61,6 @@
     </p>
     </div>
 </div>
-</table>
 <br /><br />
 <p><b>To confirm changes please enter your password below...</b><br>
 <div><%= f.password_field :current_password %></div>

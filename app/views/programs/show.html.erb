@@ -1,10 +1,9 @@
 <style type="text/css">
 	.dhtmlgoodies_contentBox{
 		border:2px solid #317082;
-		height:0px;
+		height:50px;
 		visibility:hidden;
 		###position:absolute;
-		background-color:#E0E0E0 ;
 		overflow:hidden;
 		padding:2px;
 		width:600px;		
@@ -65,7 +64,7 @@
 
 <p id="notice"><%= notice %></p>
 <%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"> eMail this program to your Athlete</a>
-
+<br /><br />
 <h2><%= @program.title %> | <%= @program.cweekstart %></h2>
 
 
@@ -74,7 +73,7 @@
 </p>
 
 <br />
-
+<br />
 <!-- ##### Coach Program Section 1 - START ##### -->
 <%= @program.cday1 %>
 <br>
@@ -90,10 +89,10 @@
 			
     <b>Comment:</b>
     <%= @program.comment.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment_path(@program.comment) %>
     </p> 
-    
+    <br />
     
     </div></div></dvi> 
 <% else %>
@@ -146,9 +145,10 @@
 			
     <b>Comment:</b>
     <%= @program.comment1.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment1_path(@program.comment1) %>
-    </p>  
+    </p> 
+    <br />
     </div></div></div>
 <% else %>
 <div>
@@ -198,9 +198,10 @@
 			
     <b>Comment:</b>
     <%= @program.comment2.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment2_path(@program.comment2) %>
     </p>  
+    <br />
     </div></div></div>
 <% else %>
 <div>
@@ -254,7 +255,7 @@
 			
     <b>Comment:</b>
     <%= @program.comment3.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment3_path(@program.comment3) %>
     </p>  
     </div></div></div>
@@ -277,7 +278,7 @@
  	 </div></div></div>
 <% end %>
 <% end %>
-<br /><br /><br />
+<br /><br />
 <!-- ##### Athlete Comment Section 4 - END ##### -->
 
 
@@ -308,9 +309,10 @@
 			
     <b>Comment:</b>
     <%= @program.comment4.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment4_path(@program.comment4) %>
     </p>  
+    <br />
     </div></div></div>
 <% else %>
 <div>
@@ -361,9 +363,10 @@
 			
     <b>Comment:</b>
     <%= @program.comment5.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment5_path(@program.comment5) %>
     </p>  
+    <br />
     </div></div></div>
 <% else %>
 <div>
@@ -415,9 +418,10 @@
 			
     <b>Comment:</b>
     <%= @program.comment6.body %>
-    <br />
+    <br /><br />
     <%= link_to 'Edit', edit_program_comment6_path(@program.comment6) %>
     </p>  
+    <br />
     </div></div></div>
 <% else %>
 <div>
