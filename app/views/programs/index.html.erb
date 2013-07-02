@@ -4,18 +4,25 @@
 	
 <% @programs.each do |program| %>
   <tr>
-    <td><h3><b><%= program.title %> | <%= program.cweekstart %></b></h3></td>
+    <td><div style="font-size: 16px; font-weight: bold; text-transform: uppercase;"><%= program.title %> | <%= program.cweekstart %></div></td>
   </tr>
   <tr>
     <td><%= program.cweekcomments %></td>
   </tr>
   <tr>
-    <td>| <%= link_to 'Show', program %> | <%= link_to 'Edit', edit_program_path(program) %> |
+  	<td>&nbsp;</td>
   </tr>
+  <tr>
+    <td><div style="font-size: 14px; font-style: oblique;"><%= link_to 'Show', program %> | <%= link_to 'Edit', edit_program_path(program) %></div></td>
+    	
+    </tr>
   
 <% end %>
 </table>
 
 <br />
+<br />
+<br />
+<br />
 
-<%= link_to 'New Program', new_program_path %>
+<a href="<%= new_program_path %>"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" /> <b>Add New Program</b></a>

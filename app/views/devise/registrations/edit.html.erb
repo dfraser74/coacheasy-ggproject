@@ -55,8 +55,12 @@
     </div>
   <div id="tabs-3" style=" font-size: 14px;">
   	<p>
+    	<%= image_tag @coach.avatar.url(:medium) %> <%= image_tag @coach.avatar.url(:thumb) %>
+		<br /><br />
+		<% @coach.save %>
+    	<%= f.file_field :avatar %>
     	
-    	#    
+		
     	
     </p>
     </div>
