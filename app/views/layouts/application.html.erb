@@ -23,10 +23,25 @@
 	
 </head>
 <body>
+	<div class="navbarpro" style="font-family: Arial; font-size: 11pt; padding-top: 5px; padding-bottom: 5px;">
+		<center>
+		<% if coach_signed_in? %> 
+		<a href="<%= dashboard_index_path %>">My Dashboard</a> 
+		<% else %> 
+		<a href="<%= root_path %>">Home</a>
+		<% end %>
+		| 
+		<a href="<%= home_about_path %>">About us</a>
+		| 
+		<a href="<%= home_faq_path %>">FAQ</a>
+		| 
+		<a href="<%= home_contact_path %>">Contact</a>
+		</center>
+	</div>
 	<br />
 	<table width="100%">
 		<td>
-			<div style="font-size: 40px; padding-left: 50px; color: skyblue;" align="left"><b>COACHEASY</b></div>
+			<div style="font-size: 40px; padding-left: 50px; color: skyblue;" align="left"><b><a href="<%= root_path %>">COACHEASY</a></b></div>
 		</td>
 		
 		

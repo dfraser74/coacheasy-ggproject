@@ -23,11 +23,25 @@
 	
 </head>
 <body>
+	<div class="navbarpro" style="font-family: Arial; font-size: 11pt; padding-top: 5px; padding-bottom: 5px;">
+		<center>
+		<% if coach_signed_in? %> 
+		<a href="<%= dashboard_index_path %>">My Dashboard</a> 
+		<% else %> 
+		<a href="<%= root_path %>">Home</a>
+		<% end %>
+		| 
+		<a href="<%= home_about_path %>">About us</a>
+		| 
+		<a href="<%= home_faq_path %>">FAQ</a>
+		| 
+		<a href="<%= home_contact_path %>">Contact</a>
+		</center>
+	</div>
 	<br />
-	
 	<table width="100%">
 		<td>
-			<div style="font-size: 40px; padding-left: 50px; color: skyblue;" align="left"><b>COACHEASY</b></div>
+			<div style="font-size: 40px; padding-left: 50px; font-family: Impact; color: #317082;" align="left"><b><a href="<%= root_path %>">COACH<color = "skyblue">EASY</color></a></b></div>
 		</td>
 		
 		
@@ -36,7 +50,7 @@
 			<div align="right" style="padding-right: 50px">
 		
 		<% if coach_signed_in? %>
-			hello <%= current_coach.firstname%> | <%= link_to 'My Dashboard', dashboard_index_path %> | <%= link_to "Sign out", destroy_coach_session_path, :method => :delete %>
+			Hello, <%= current_coach.firstname%> | <%= link_to 'My Dashboard', dashboard_index_path %> | <%= link_to "Sign out", destroy_coach_session_path, :method => :delete %>
 		<% else %>
 			<b><%= link_to "Sign up", new_coach_registration_path %></b> or <b><%= link_to "Sign in", new_coach_session_path %></b>
 		<% end %>

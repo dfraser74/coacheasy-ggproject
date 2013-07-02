@@ -6,4 +6,8 @@ class DashboardController < ApplicationController
     
   end
   
+  def show
+    
+  end
+  
 end
