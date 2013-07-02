@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comment1s", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -48,6 +52,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comment2s", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -55,6 +63,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comment3s", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -62,6 +74,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comment4s", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -69,6 +85,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comment5s", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -76,6 +96,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comment6s", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -83,6 +107,10 @@ ActiveRecord::Schema.define(:version => 20130702122456) do
   create_table "comments", :force => true do |t|
     t.integer  "program_id"
     t.text     "body"
+    t.text     "resthr"
+    t.text     "tzone"
+    t.text     "fgf"
+    t.text     "other"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -61,19 +61,30 @@
 		slidedownSpeed = newSpeed;
 	}
 	</script>
-
-<p id="notice"><%= notice %></p>
-<%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"> eMail this program to your Athlete</a>
+<%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"><img src="http://fbn-i.org/fbn/web.nsf/tiny_email_icon.gif" /> eMail this program to your Athlete </a>
 <br /><br />
 <h2><%= @program.title %> | <%= @program.cweekstart %></h2>
 
-
+<hr />
 <p>
   <b><i><%= @program.cweekcomments %></i></b>
 </p>
+<hr />
+<br />
+<br />
 
-<br />
-<br />
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- ##### Coach Program Section 1 - START ##### -->
 <%= @program.cday1 %>
 <br>
@@ -82,34 +93,71 @@
 <!-- ##### Athlete Comment Section 1 - START ##### -->
 <% if @program.comment %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box1');return false;">Veiw/Edit Athlete Data for Monday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box1');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Monday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box1">
 		<div class="dhtmlgoodies_content" id="subBox1">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment_path(@program.comment) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment_path(@program.comment) %>
     </p> 
     <br />
     
     </div></div></dvi> 
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box1');return false;">Submit Athlete Data for Monday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box1');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Monday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box1">
 		<div class="dhtmlgoodies_content" id="subBox1">
 			
 			
   	<%= form_for([@program, @program.build_comment]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
+  	<div class="actions" align="left">
     <%= f.submit "Submit Day 1 Data"%>
     </div>
+    <br />
     
     
     </div></div></div>
@@ -130,6 +178,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <!-- ##### Coach Program Section 2 - START ##### -->
 <%= @program.cday2 %>
 <br>
@@ -138,21 +194,40 @@
 <!-- ##### Athlete Comment Section 2 - START ##### -->
 <% if @program.comment1 %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box2');return false;">Veiw/Edit Athlete Data for Tuesday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box2');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Tuesday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box2">
 		<div class="dhtmlgoodies_content" id="subBox2">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment1.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment1_path(@program.comment1) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment1.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment1.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment1.fgf %><div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :size => "50x5" %>
+  	</div>
+  	<div class="actions">
+    <%= f.submit "Submit Day 7 Data" %>
+ 	 </div>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment1.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment1_path(@program.comment1) %>
     </p> 
     <br />
     </div></div></div>
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box2');return false;">Submit Athlete Data for Tuesday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box2');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Tuesday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box2">
 		<div class="dhtmlgoodies_content" id="subBox2">
 			
@@ -160,17 +235,52 @@
   	
   	<%= form_for([@program, @program.build_comment1]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
+  	<div class="actions" align="left">
     <%= f.submit "Submit Day 2 Data"%>
- 	 </div>
+    </div>
+    <br />
  	 </div></div></div>
 <% end %>
 <% end %>
 <br /><br /><br />
 <!-- ##### Athlete Comment Section 2 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,21 +301,34 @@
 <!-- ##### Athlete Comment Section 3 - START ##### -->
 <% if @program.comment2 %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box3');return false;">Veiw/Edit Athlete Data for Wenesday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box3');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Wenesday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box3">
 		<div class="dhtmlgoodies_content" id="subBox3">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment2.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment2_path(@program.comment2) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment2.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment2.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment2.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment2.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment2_path(@program.comment2) %>
     </p>  
     <br />
     </div></div></div>
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box3');return false;">Submit Athlete Data for Wenesday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box3');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Wenesday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box3">
 		<div class="dhtmlgoodies_content" id="subBox3">
 			
@@ -213,17 +336,48 @@
   	
   	<%= form_for([@program, @program.build_comment2]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
-    <%= f.submit "Submit Day 3 Data" %>
- 	 </div>
+  	<div class="actions" align="left">
+    <%= f.submit "Submit Day 3 Data"%>
+    </div>
+    <br />
  	 </div></div></div>
 <% end %>
 <% end %>
-<br /><br /><br />
+<br /><br />
 <!-- ##### Athlete Comment Section 3 - END ##### -->
+
+
+
+
+
+
+
 
 
 
@@ -248,20 +402,33 @@
 <!-- ##### Athlete Comment Section 4 - START ##### -->
 <% if @program.comment3 %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box4');return false;">Veiw/Edit Athlete Data for Thursday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box4');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Thursday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box4">
 		<div class="dhtmlgoodies_content" id="subBox4">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment3.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment3_path(@program.comment3) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment3.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment3.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment3.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment3.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment3_path(@program.comment3) %>
     </p>  
     </div></div></div>
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box4');return false;">Submit Athlete Data for Thursday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box4');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Thursday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box4">
 		<div class="dhtmlgoodies_content" id="subBox4">
 			
@@ -269,17 +436,52 @@
   	
   	<%= form_for([@program, @program.build_comment3]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
-    <%= f.submit "Submit Day 4 Data" %>
- 	 </div>
+  	<div class="actions" align="left">
+    <%= f.submit "Submit Day 4 Data"%>
+    </div>
+    <br />
  	 </div></div></div>
 <% end %>
 <% end %>
 <br /><br />
 <!-- ##### Athlete Comment Section 4 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -302,21 +504,34 @@
 <!-- ##### Athlete Comment Section 5 - START ##### -->
 <% if @program.comment4 %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box5');return false;">Veiw/Edit Athlete Data for Friday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box5');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Friday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box5">
 		<div class="dhtmlgoodies_content" id="subBox5">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment4.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment4_path(@program.comment4) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment4.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment4.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment4.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment4.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment4_path(@program.comment4) %>
     </p>  
     <br />
     </div></div></div>
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box5');return false;">Submit Athlete Data for Friday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box5');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Friday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box5">
 		<div class="dhtmlgoodies_content" id="subBox5">
 			
@@ -324,17 +539,53 @@
   	
   	<%= form_for([@program, @program.build_comment4]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
-    <%= f.submit "Submit Day 5 Data" %>
- 	 </div>
+  	<div class="actions" align="left">
+    <%= f.submit "Submit Day 5 Data"%>
+    </div>
+    <br />
  	 </div></div></div>
 <% end %>
 <% end %>
 <br /><br /><br />
 <!-- ##### Athlete Comment Section 5 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -356,21 +607,34 @@
 <!-- ##### Athlete Comment Section 6 - START ##### -->
 <% if @program.comment5 %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box6');return false;">Veiw/Edit Athlete Data for Saturday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box6');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Saturday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box6">
 		<div class="dhtmlgoodies_content" id="subBox6">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment5.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment5_path(@program.comment5) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment5.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment5.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment5.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment5.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment5_path(@program.comment5) %>
     </p>  
     <br />
     </div></div></div>
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box6');return false;">Submit Athlete Data for Saturday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box6');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Saturday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box6">
 		<div class="dhtmlgoodies_content" id="subBox6">
 			
@@ -378,17 +642,56 @@
   	
   	<%= form_for([@program, @program.build_comment5]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
-    <%= f.submit "Submit Day 6 Data" %>
- 	 </div>
+  	<div class="actions" align="left">
+    <%= f.submit "Submit Day 6 Data"%>
+    </div>
+    <br />
  	 </div></div></div>
 <% end %>
 <% end %>
 <br /><br /><br />
 <!-- ##### Athlete Comment Section 6 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -411,21 +714,34 @@
 <!-- ##### Athlete Comment Section 7 - START ##### -->
 <% if @program.comment6 %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box7');return false;">Veiw/Edit Athlete Data for Sunday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box7');return false;"><img src="http://www.casio.edu.shriro.com.au/app/graphics/edit_icon_small_dark_tip.png" width="12px" height="12xp" />Veiw/Edit Athlete Data for Sunday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box7">
 		<div class="dhtmlgoodies_content" id="subBox7">
 			
 			
-    <b>Comment:</b>
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
     <%= @program.comment6.body %>
     <br /><br />
-    <%= link_to 'Edit', edit_program_comment6_path(@program.comment6) %>
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment6.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment6.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment6.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment6.other %>
+    <br /><br /><br /><br />
+  
+    <%= link_to 'Edit Feedback', edit_program_comment6_path(@program.comment6) %>
     </p>  
     <br />
     </div></div></div>
 <% else %>
 <div>
-	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box7');return false;">Submit Athlete Data for Sunday</a></div>
+	<div id="dhtmlgoodies_control"><a href="#" onclick="slidedown_showHide('box7');return false;"><img src="http://www.iconsdb.com/icons/preview/gray/plus-4-m.png" width="12px" height="12xp" />Submit Athlete Data for Sunday</a></div>
 	<div class="dhtmlgoodies_contentBox" id="box7">
 		<div class="dhtmlgoodies_content" id="subBox7">
 			
@@ -433,12 +749,36 @@
   	
   	<%= form_for([@program, @program.build_comment6]) do |f| %>
     <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, :size => "50x5" %>
+    <%= f.label :Feedback_of_session %><br />
+    <%= f.text_area :body, :size => "71x5" %><br />
+    <br />
+    
+    
+    <%= f.label :Resting_Heart_Rate %><br />
+    <%= f.text_area :resthr, :size => "5x1" %><br />
+    <br />
+    
+    
+    <%= f.label :Training_Zone_used %><br />
+    <%= f.select :tzone, [['Z1','Z1'],['Z2','Z2'],['Z3','Z3'],['Z4','Z4'],['Z5','Z5'],['Z6','Z6'],['Z7','Z7']] %>
+   <br />
+    <br />
+    
+    
+    <%= f.label :Feel_Good_Factor %><br />
+    <%= f.select :fgf, [['Really Good','Really Good'],['Good','Good'],['Alright','Alright'],['Not Brilliant','Not Brilliant'],['Bad','Bad'],['Worst Ever','Worst Ever']] %>
+    <br />
+    <br />
+    
+    
+    <%= f.label :Any_Other_comments %><br />
+    <%= f.text_area :other, :size => "71x5" %><br />
+    
   	</div>
-  	<div class="actions">
-    <%= f.submit "Submit Day 7 Data" %>
- 	 </div>
+  	<div class="actions" align="left">
+    <%= f.submit "Submit Day 7 Data"%>
+    </div>
+    <br />
  	 </div></div></div>
 <% end %>
 <% end %>
@@ -455,10 +795,14 @@
 
 
 
+
+
+
+
 <script type="text/javascript">
 setSlideDownSpeed(5);
 </script>
-
+<%= link_to '<< Back', programs_path %>
 
 
 
