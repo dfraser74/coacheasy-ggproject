@@ -30,7 +30,6 @@ end
 gem 'jquery-rails'
 gem 'jquery_datepicker'
 gem 'devise'
-gem 'thin'
 gem 'cancan'
 gem 'easy_roles'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
