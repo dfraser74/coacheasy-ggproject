@@ -1,0 +1,359 @@
+
+<%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"><img src="http://fbn-i.org/fbn/web.nsf/tiny_email_icon.gif" /> eMail this program to your Athlete </a>
+<br /><br />
+<h2><%= @program.title %> | <%= @program.cweekstart %></h2>
+
+<hr />
+<p>
+  <b><i><%= @program.cweekcomments %></i></b>
+</p>
+<hr />
+<br />
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 1 - START ##### -->
+<%= @program.cday1 %>
+<br>
+<%= @program.cday1zone %>
+<!-- ##### Coach Program Section 1 - END ##### -->
+<!-- ##### Athlete Comment Section 1 - START ##### -->
+
+			
+    <div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment.other %>
+    <br /><br /><br /><br />
+  
+<!-- ##### Athlete Comment Section 1 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 2 - START ##### -->
+<%= @program.cday2 %>
+<br>
+<%= @program.cday2zone %>
+<!-- ##### Coach Program Section 2 - END ##### -->
+<!-- ##### Athlete Comment Section 2 - START ##### -->
+
+<div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment1.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment1.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment1.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment1.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment1.other %>
+    <br /><br /><br /><br />
+    
+<!-- ##### Athlete Comment Section 2 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 3 - START ##### -->
+<%= @program.cday3 %>
+<br>
+<%= @program.cday3zone %>
+<!-- ##### Coach Program Section 3 - END ##### -->
+<!-- ##### Athlete Comment Section 3 - START ##### -->
+
+<div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment2.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment2.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment2.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment2.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment2.other %>
+    <br /><br /><br /><br />
+    
+<!-- ##### Athlete Comment Section 3 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 4 - START ##### -->
+<%= @program.cday4 %>
+<br>
+<%= @program.cday4zone %>
+<!-- ##### Coach Program Section 4 - END ##### -->
+<!-- ##### Athlete Comment Section 4 - START ##### -->
+
+<div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment3.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment3.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment3.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment3.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment3.other %>
+    <br /><br /><br /><br />
+    
+<!-- ##### Athlete Comment Section 4 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 5 - START ##### -->
+<%= @program.cday5 %>
+<br>
+<%= @program.cday5zone %>
+<!-- ##### Coach Program Section 5 - END ##### -->
+<!-- ##### Athlete Comment Section 5 - START ##### -->
+
+<div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment4.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment4.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment4.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment4.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment4.other %>
+    <br /><br /><br /><br />
+    
+<!-- ##### Athlete Comment Section 5 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 6 - START ##### -->
+<%= @program.cday6 %>
+<br>
+<%= @program.cday6zone %>
+<!-- ##### Coach Program Section 6 - END ##### -->
+<!-- ##### Athlete Comment Section 6 - START ##### -->
+
+<div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment5.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment5.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment5.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment5.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment5.other %>
+    <br /><br /><br /><br />
+    
+<!-- ##### Athlete Comment Section 6 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ##### Coach Program Section 7 - START ##### -->
+<%= @program.cday7 %>
+<br>
+<%= @program.cday7zone %>
+<!-- ##### Coach Program Section 7 - END ##### -->
+<!-- ##### Athlete Comment Section 7 - START ##### -->
+
+<div style="font-weight: bold;">Feedback From Session:</div><br />
+    <%= @program.comment6.body %>
+    <br /><br />
+    <div style="font-weight: bold;">Resting Heart Rate:</div><br />
+    <%= @program.comment6.resthr %>
+    <br /><br />
+    <div style="font-weight: bold;">Training Zone Used:</div><br />
+    <%= @program.comment6.tzone %>
+    <br /><br />
+    <div style="font-weight: bold;">Feel Good Factor:</div><br />
+    <%= @program.comment6.fgf %>
+    <br /><br />
+    <div style="font-weight: bold;">Other Comments:</div><br />
+    <%= @program.comment6.other %>
+    <br /><br /><br /><br />
+    
+<!-- ##### Athlete Comment Section 7 - END ##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to '<< Back', programs_path %>
+
+
+

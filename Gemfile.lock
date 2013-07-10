@@ -12,6 +12,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.2)
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
       mail (~> 2.4.4)
@@ -39,6 +40,7 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    afm (0.2.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -65,6 +67,7 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    hashery (2.1.0)
     hike (1.2.3)
     i18n (0.6.4)
     journey (1.0.4)
@@ -80,7 +83,17 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     orm_adapter (0.4.0)
+    pdf-reader (1.3.3)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.0)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
+    pdfkit (0.5.4)
     polyglot (0.3.3)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -107,6 +120,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     rmagick (2.13.2)
+    ruby-rc4 (0.1.5)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -127,12 +141,14 @@ GEM
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     tzinfo (0.3.37)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    wkhtmltopdf (0.1.2)
     zipruby (0.3.6)
 
 PLATFORMS
@@ -146,10 +162,13 @@ DEPENDENCIES
   jquery-rails
   jquery_datepicker
   paperclip!
+  pdfkit
+  prawn
   rails (= 3.2.12)
   rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   thin
   uglifier (>= 1.0.3)
+  wkhtmltopdf
   zipruby

@@ -1,4 +1,4 @@
-class ProgramsController < ApplicationController
+class ProgramController < ApplicationController
   
   before_filter :authenticate_coach!, :except => [:show]
     
@@ -18,7 +18,7 @@ class ProgramsController < ApplicationController
   # GET /programs/1
   # GET /programs/1.json
   def show
-    @program = Program.find(params[:id])
+    @programs = Program.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

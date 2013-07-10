@@ -12,8 +12,10 @@ Coacheasy::Application.routes.draw do
     resources :comment4s
     resources :comment5s
     resources :comment6s
+    get '/print', on: :collection, :controller => 'programs'
   end
 
+  
   match 'home/about.html.erb' => "home#about", :as => :home_about
   match 'home/faq.html.erb' => "home#faq", :as => :home_faq
   match 'home/contact.html.erb' => "home#contact", :as => :home_contact
