@@ -61,7 +61,7 @@
 		slidedownSpeed = newSpeed;
 	}
 	</script>
-<%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"><img src="http://fbn-i.org/fbn/web.nsf/tiny_email_icon.gif" /> eMail this program to your Athlete </a>
+<%= link_to '<< Back', programs_path %> | <a href="mailto:someone@somedomain.com?subject=Your%20Training%20Program%20for%20this%20week&body=<%= request.original_url %>"><img src="http://fbn-i.org/fbn/web.nsf/tiny_email_icon.gif" /> eMail this program to your Athlete </a> | <a href="<%= request.original_url %>.pdf"> Download Report </a>
 <br /><br />
 <h2><%= @program.title %> | <%= @program.cweekstart %></h2>
 

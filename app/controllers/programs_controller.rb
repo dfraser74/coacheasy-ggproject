@@ -23,7 +23,14 @@ class ProgramsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @program }
+      format.pdf do
+        pdf = ProgramPdf.new(@program, view_context)
+        send_data pdf.render, filename: 
+        "report_#{@program.title}_#{@program.created_at.strftime("%d/%m/%Y")}.pdf",
+        type: "application/pdf"
+      end
     end
+    
   end
   
   

@@ -3,6 +3,7 @@ Coacheasy::Application.routes.draw do
 
   resources :programs
   resources :dashboard
+ 
 
   resources :program do
     resources :comments
